@@ -26,4 +26,5 @@ RUN cd /opt && git clone -b master https://github.com/RuudBurger/CouchPotatoServ
 RUN rm -rf /var/cache/apk/*
 
 EXPOSE 5050
+VOLUME ["/config"]
 ENTRYPOINT ["python", "CouchPotato.py", "--console_log", "--pid_file=/run/couchpotato.pid", "--data_dir=/config"]
